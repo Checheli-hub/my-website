@@ -1,71 +1,84 @@
-:root{
-    --primary-color:#fff;
-    --secondary-color:#222831; /* Dark blue-gray */
-    --color-heading:#fff;
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #222831;
+    /* Dark blue-gray */
+    --color-heading: #fff;
 }
 
 /*typography*/
-html{
+html {
     font-size: 62.5%;
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:inter, arial,Arial, Helvetica, sans-serif ;
+body {
+    font-family: inter, arial, Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    
-}
-h1,h2,h2{
-    color:var(--color-heading);
 
 }
-h3{
-    font-size: 1.7rem;
-    
+
+h1,
+h2,
+h2 {
+    color: var(--color-heading);
+
 }
-@media screen and (min-width:1024px) {
-    
-    body{
+
+h3 {
+    font-size: 1.7rem;
+
+}
+
+@media screen and (max-width:1024px) {
+
+    body {
         font-size: 1.5rem;
+        height: 90vh;
     }
 
-h3{
-    font-size: 2rem;
-}
+
+    h3 {
+        font-size: 2rem;
+    }
 
 }
 
 /*header*/
-header{
+header {
     background: url(../images/hero.background.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 570px;
+    background-position: center;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    
-    
-    
+
+
+
 }
 
-.wrap-header{
+.wrap-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color:var(--secondary-color);
+    background-color: var(--secondary-color);
     padding: 1rem;
-    
+    width: 98%;
+
+
 }
 
-.logo{
+.logo {
     height: 50px;
     width: 50px;
     border-radius: 100%;
 
 }
 
-.hamburger-menu{
+.hamburger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -73,28 +86,34 @@ header{
     border: none;
     height: 30px;
     width: 38px;
-}
-
-.hamburger-menu span{
-    background: var(--primary-color);
-    width: 100%;
-    height: 3px;    
+    box-sizing: border-box;
+    cursor: pointer;
     
 }
+.hamburger-menu:focus {
+    outline: none;
+}
 
-.menu{
+.hamburger-menu span {
+    background: var(--primary-color);
+    width: 100%;
+    height: 3px;
+}
+
+.menu {
     display: none;
     position: absolute;
     top: 65px;
-    background-color:var(--secondary-color);
+    background-color: var(--secondary-color);
     height: 500px;
-     width: 100%;
-    z-index: 10; 
-     right: 0.1rem;
+    width: 100%;
+    z-index: 10;
+    right: 0.1rem;
+
 
 }
 
-.menu ul{
+.menu ul {
     list-style: none;
     font-size: 1.3rem;
     cursor: pointer;
@@ -103,50 +122,202 @@ header{
     justify-content: flex-start;
     align-items: flex-start;
     padding-left: 3rem;
-    
+
 }
-.menu li{
+
+.menu li {
     padding-bottom: 2.5rem;
 }
-li a{
+
+li a {
     text-decoration: none;
     color: var(--primary-color);
 }
 
-.menu.active{
+.menu.active {
     display: block;
 }
-.hamburger-menu.active span:nth-child(1){
-    transform: translateY(8px) rotate(45deg); 
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.hamburger-menu.active span:nth-child(2){
-opacity: 0;    
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
 
 }
 
-.hamburger-menu.active span:nth-child(3){
-    transform: translateY(-10px) rotate(-45deg); 
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
-.role-name-wrapper{
-    align-self: center;
+.role-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: var(--color-heading);
-    margin-top: 22rem;
-    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
 }
 
-.my-name{
-    font-size: 2rem;
-    padding-left: 12rem;
+.my-role-con,
+.my-name-con {
+    margin-bottom: 0;
+}
+
+.my-role {
+    margin-bottom: 0;
+}
+
+.my-name {
+    font-size: 2.5rem;
+    margin-top: 0;
 }
 
 @keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
-.my-role, .my-name {
-  animation: float 2.5s ease-in-out infinite;
+.my-role,
+.my-name {
+    animation: float 2.5s ease-in-out infinite;
+}
+
+
+@media screen and (max-width:600px) {
+
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .wrap-header {
+        width: 95%;
+        position: fixed;
+        z-index: 100;
+
+    }
+
+    .menu {
+        height: 530px;
+
+    }
+
+    .menu li:nth-child(5) {
+        display: none;
+    }
+
+    .my-role {
+        font-size: 1.5rem;
+    }
+
+    .role-name-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: 230px;
+
+    }
+}
+
+@media screen and (min-width:900px) {
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .wrap-header {
+        width: 100vh;
+        background: none;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+
+    .role-name-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-heading);
+        position: static;
+        margin-top:32vh;
+        margin-bottom: 0.5rem;
+        padding: 2rem;
+
+    
+    }
+
+
+    .my-role {
+        font-size: 1rem;
+        margin-bottom: 0;
+
+    }
+
+    .my-name {
+        font-size: 7rem;
+        margin-top: 0;
+    }
+
+
+    .menu {
+        display: block;
+        position: static;
+        height: 50px;
+        width: 50%;
+        border-radius: 1rem;
+        background-color: rgba(173, 172, 172, 0.16);
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+    }
+
+
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 1rem;
+    }
+
+    .menu li {
+        padding: 0 1rem;
+    }
+
+    .menu li a {
+        font-size: 2rem;
+    }
+
+    .menu li:nth-child(4) {
+        display: none;
+    }
+
 }

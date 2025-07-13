@@ -42,6 +42,7 @@ header {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
     
 
 
@@ -181,13 +182,80 @@ li a {
     width: 15%;
 }
 
-.aboutme{
+.aboutme,
+.Projects{
     margin-top: 1rem;
     color:black;
-
+    margin-bottom: 0;
 }
 
+.tagline{
+    font-size: 2rem;
+    padding:0 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.tagline-notes{
+    font-size: 1.5rem;
+    padding: 1rem 2rem;  
+}
+.moving-roles{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    overflow:hidden; 
+    
+}
+
+
+.uiux-role,
+.frontend-role
+{
+    font-size: 1.5rem;
+    padding: 0 2rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    padding: 1rem;
+    text-align: left;
+    
+}
+
+.uiux-name,
+.frontend-name{
+     font-size: 2rem;
+     padding: 0 2rem;
+     margin-top: 1rem; 
+    flex-shrink: 0;
+    padding: 1rem;
+    text-align: left;   
+}
+
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(-100%);   
+    }
+
+    100%{
+        transform: translateX(100vw);    
+    }
+}
+
+
+.slide-in-right{
+    animation: slide-in-right 7s linear infinite;
+    
+}
+
+
+
 @media screen and (max-width:600px) {
+body{
+    width: 100%;
+    
+}
 
 body.menu-open{
     overflow: hidden;
@@ -198,18 +266,18 @@ body.menu-open{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
+        
     }
 
     .wrap-header {
-        width: 95%;
+        width: 97%;
         position: fixed;
         z-index: 100;
 
     }
 
     .menu {
-        min-height: 90%;
+        min-height: 97%;
         height: auto;
         position: fixed; 
     
@@ -232,6 +300,10 @@ body.menu-open{
         bottom: 230px;
 
     }
+
+    
+
+
 }
 
 
@@ -302,7 +374,7 @@ body.menu-open{
         transform: none !important;
         transition: none !important;
         animation: none !important;
-        margin-bottom: 9rem;
+        margin-bottom: 2rem;
 
     }
 
@@ -329,7 +401,54 @@ body.menu-open{
     .menu li:nth-child(4) {
         display: none;
     }
+
+
+ .aboutme{
+    margin-bottom: 6rem;
+ }
+ 
+ 
+ .uiux-name,
+.frontend-name{
+        min-width: 300px;
+        flex-shrink: 0;
+
+
 }
+    .tags{
+        display: grid;
+        grid-template-columns:55% 45% ; 
+        overflow: hidden;
+    }
+
+    .tags-con{
+        margin-left: 1rem;
+    }
+
+
+.line-straight{
+    border: 1px solid black;
+    height: 100%;
+    margin-left: -1rem;
+}
+.tagline{
+    font-size: 3rem;
+}
+.tagline-notes{
+    font-size: 2.5rem;
+}
+
+.uiux-role,
+.frontend-role{
+    font-size: 2.5rem;
+}
+
+.uiux-name,
+.frontend-name{
+    font-size: 3rem;
+}
+}
+
 
 
 
@@ -448,6 +567,24 @@ body.menu-open{
     .menu li:nth-child(4) {
         display: none;
     }
+
+.tagline{
+    font-size: 1.5rem;
+}
+.tagline-notes{
+    font-size: 1.4rem;
+}
+
+.uiux-role,
+.frontend-role{
+    font-size: 2.2rem;
+}
+
+.uiux-name,
+.frontend-name{
+    font-size: 2.7rem;
+}
+
 
 }
 

@@ -59,33 +59,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-  const sections = [
-    { id: "aboutme", linkId: "aboutmeLink" },
-    { id: "projects", linkId: "projectsLink" },
-    { id: "tools", linkId: "contactmeLink" }
-  ];
-
-  function onScroll() {
-    const scrollY = window.scrollY + 150; // offset to trigger slightly earlier
-
-    sections.forEach(({ id, linkId }) => {
-      const section = document.getElementById(id);
-      const link = document.getElementById(linkId);
-
-      if (!section || !link) return;
-
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (scrollY >= sectionTop && scrollY < sectionBottom) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", onScroll);
-  window.addEventListener("load", onScroll);
-
 });

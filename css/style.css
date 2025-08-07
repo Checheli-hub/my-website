@@ -172,7 +172,7 @@ li a {
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
     
 }
 .aboutme-con1{
@@ -277,6 +277,68 @@ li a {
     text-decoration: none;
     color: black;
     padding: 4rem 2rem;
+    
+}
+.tools{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+    background-color: rgba(173, 172, 172, 0.16);
+    margin-bottom: 2rem;
+}
+
+
+
+.bton{
+
+    width: 60%;
+    height: 40px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    border: none;
+    background: transparent;
+    color:#222;
+    font-weight: bold;
+    position: relative;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.bton.active{
+    background: #111;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.frontend-icons{
+    grid-template-columns:repeat(2, 1fr) ;
+    column-gap: 4px;
+    justify-self: center;
+    display: grid;
+}
+.uiux-icons{
+    grid-template-columns:repeat(2, 1fr) ;
+    column-gap: 4px;
+    justify-self: center;
+    display: none;
+}
+
+.frontend-icons img,
+.uiux-icons img{
+    background-color:rgba(173, 172, 172, 0.16);
+    padding: 3rem;
+    margin:1rem;
+    width:12rem;
+    height: 10rem;
     
 }
 
@@ -399,9 +461,24 @@ body.menu-open{
 .img-con{
     display:grid;
     grid-template-rows: repeat(3, 1fr);
-   
+    
 }
 
+.frontend-icons,
+.uiux-icons{
+        column-gap: 2px;
+        row-gap: 19px;  
+     
+        
+    }       
+
+.frontend-icons img,
+.uiux-icons img{
+    margin:5px;
+    padding: 3rem;
+    width: 10rem;
+   
+}
 
 }
 
@@ -561,6 +638,22 @@ body.menu-open{
     margin-bottom: 2rem; 
 }
 
+.frontend-icons,
+.uiux-icons{
+        grid-template-columns: repeat(5, 1fr);
+
+}
+
+.frontend-icons img{
+    margin:5px;
+    padding: 3rem;
+    width: 8rem;
+}
+.uiux-icons img{
+    margin:5rem;
+    padding: 3rem;
+    width: 8rem;
+}
 
 
 
@@ -631,6 +724,35 @@ footer ul li{
 
     }
 
+.menu-list{
+    
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    justify-content: center;
+    font-weight: bold;
+    
+}
+.menu-list li{
+    position: relative;
+}
+
+.menu-list a::before{
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.menu-list a.active::before{
+    background-color: black;
+    opacity: 1;
+
+}
 
     .role-name-wrapper {
         display: flex;
@@ -732,6 +854,7 @@ footer ul li{
     grid-template-columns:30% 30% 30%;   
     justify-content: center;
 }
+
 .img-wrapper{
     width: 100%;
 }
@@ -740,6 +863,32 @@ footer ul li{
     width: 95%;
 }
 
+.frontend-icons{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 4px;
+    justify-self: center;
+}
+
+.uiux-icons{
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+    justify-self: center;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.frontend-icons img{
+    margin:5px;
+    padding:3rem;
+    width: 12rem;
+}
+.uiux-icons img{
+    padding: 3rem;
+    width: 12rem;
+}
 
 footer{
     justify-content: space-between;
